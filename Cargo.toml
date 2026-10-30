@@ -1,0 +1,10 @@
+[package]
+name = "horizon-mod-fly-speed"
+version = "0.1.0"
+edition = "2024"
+publish = false
+description = "Fly Speed, a native Horizon mod: /flyspeed changes how fast you fly."
+
+# The mod's logic and its tests: the same file the bundle adds to the game.
+[lib]
+path = "mixins/fly_speed/runtime.rs"
