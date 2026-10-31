@@ -12,6 +12,12 @@ Options > Mods > Fly Speed > Settings.
 | `/flyspeed 1.5` | Any multiplier from 0.1 to 20 |
 | `/flyspeed +1` / `/flyspeed -0.5` | Steps from the current one |
 | `/flyspeed reset` | Back to the game's own speed (1x) |
+| `/flyspeed-help` | Shows the command help |
+| `/flyspeed-reset` | Back to the game's own speed (1x) |
+
+Horizon chat autocomplete lists `/flyspeed`, `/flyspeed-help` and
+`/flyspeed-reset` when the mod is enabled. Numeric and relative arguments are
+entered after `/flyspeed` as shown above.
 
 The settings page has one button that steps through 0.5x, 1x, 2x, 4x, 8x and
 16x. The choice is kept per mod in
@@ -20,11 +26,12 @@ The settings page has one button that steps through 0.5x, 1x, 2x, 4x, 8x and
 ## How it works
 
 The mod is native, so it is compiled into the game rather than loaded as data.
-It uses five stable hook points (version 1):
+It uses six stable hook points (version 35):
 
 - `native_tick` sets the local player's `PlayerMotion::flying_speed` to
   `0.05 * multiplier` each tick, skipping spectators.
 - `native_command` handles `/flyspeed`.
+- `native_commands` registers the chat autocomplete names.
 - `native_mods` adds the row under Options > Mods.
 - `native_settings` and `native_settings_click` draw and handle the button.
 
@@ -60,8 +67,8 @@ presets, `/flyspeed`'s arguments and the stored setting.
 
 ```
 horizon-native.json                  the .hnmod manifest
-mixins/fly_speed/horizon-mixin.toml  the module and its five injections
+mixins/fly_speed/horizon-mixin.toml  the module and its six injections
 mixins/fly_speed/runtime.rs          the logic and its tests
-mixins/fly_speed/{tick,command,list,settings,click}.rs   the hook helpers
-compatibility.json                   game 26.3, hooks 1, pinned revisions
+mixins/fly_speed/{tick,command,commands,list,settings,click}.rs   the hook helpers
+compatibility.json                   game 26.3, hooks 35, pinned revisions
 ```
