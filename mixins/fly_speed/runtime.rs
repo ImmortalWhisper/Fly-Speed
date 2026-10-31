@@ -6,7 +6,7 @@
 /// The mod's id (its settings folder), name, version and line.
 pub const ID: &str = "fly_speed";
 pub const NAME: &str = "Fly Speed";
-pub const VERSION: &str = "0.1.0";
+pub const VERSION: &str = "0.2.0";
 pub const DESCRIPTION: &str = "Fly 0.1x to 20x your normal speed: /flyspeed 2, /flyspeed +1, /flyspeed reset for 1x.";
 
 /// The game's own flying speed: `Abilities.flyingSpeed`, what the game sets

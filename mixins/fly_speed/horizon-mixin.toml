@@ -2,7 +2,7 @@
 # builds this on any Horizon that has them.
 [mod]
 id = "fly_speed"
-version = "0.1.0"
+version = "0.2.0"
 priority = 100
 
 [compatibility]

@@ -42,7 +42,7 @@ whatever the server says your speed is.
 
 Native mods are source; the launcher compiles them.
 
-1. Put `fly_speed-0.1.0.hnmod` in
+1. Put `fly_speed-0.2.0.hnmod` in
    `%APPDATA%\horizon\instances\native-mods\horizon-native-mods\`.
 2. In the launcher: Settings > Native mods (experimental) > Build, and confirm
    you trust the mod.
